@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B0772ACD-A482-49C2-8D0F-7036C5C8B00C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DE5123BF-745C-4344-A2F1-610121E2ABDA}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "JavascriptExperiments", "src\JavascriptExperiments\JavascriptExperiments.xproj", "{871568F1-CCCE-4059-91A0-9EDD284EF28E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{871568F1-CCCE-4059-91A0-9EDD284EF28E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{871568F1-CCCE-4059-91A0-9EDD284EF28E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{871568F1-CCCE-4059-91A0-9EDD284EF28E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{871568F1-CCCE-4059-91A0-9EDD284EF28E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{871568F1-CCCE-4059-91A0-9EDD284EF28E} = {B0772ACD-A482-49C2-8D0F-7036C5C8B00C}
+	EndGlobalSection
+EndGlobal

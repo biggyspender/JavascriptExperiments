@@ -1,0 +1,10 @@
+{
+  "version": "1.0.0",
+  "name": "JavascriptExperiments",
+  "private": true,
+  "devDependencies": {
+    "gulp": "3.8.11",
+    "gulp-util": "3.0.4",
+    "gulp-webpack": "1.4.0"
+  }
+}
