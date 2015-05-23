@@ -1,6 +1,5 @@
 {
-	"name": "JavascriptExperiments",
-	"private": true,
-	"dependencies": {
-	}
+  "name": "JavascriptExperiments",
+  "private": true,
+  "dependencies": {}
 }

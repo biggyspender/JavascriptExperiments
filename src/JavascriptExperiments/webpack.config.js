@@ -2,6 +2,26 @@
 module.exports =
 {
     watch: true,
+    plugins: [
+        //new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.UglifyJsPlugin({
+            mangle: true,
+            compress: {
+                sequences: true,
+                dead_code: true,
+                conditionals: true,
+                booleans: true,
+                unused: true,
+                if_return: true,
+                join_vars: true,
+                drop_console: true
+            }
+        }),
+        //new webpack.optimize.AggressiveMergingPlugin()
+    ],
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
     module: {
         loaders: [
           {
@@ -15,11 +35,7 @@ module.exports =
           },
 
         ],
-        plugins: [
-            //new webpack.optimize.DedupePlugin(),
-            //new webpack.optimize.UglifyJsPlugin(),
-            //new webpack.optimize.AggressiveMergingPlugin()
-        ]
+
     },
     devtool: "source-map",
     output: {
