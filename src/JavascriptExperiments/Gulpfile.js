@@ -1,10 +1,14 @@
 ﻿var gulp = require('gulp');
 var gutil = require("gulp-util");
 var clean = require("gulp-clean");
-var webpack = require("gulp-webpack");
+var uglify = require("gulp-uglify");
+var webpack = require("webpack");
+var webpackConfig = require("./webpack.config");
+var gulpWebpack = require("gulp-webpack");
 var fs = require("fs");
 
 eval("var project = " + fs.readFileSync("./project.json"));
+
 var paths = {
     bower: "./bower_components/",
     lib: "./" + project.webroot + "/lib/"
@@ -15,25 +19,7 @@ gulp.task('clean', function () {
 });
 
 gulp.task("webpack", function () {
-    return gulp.src('Scripts/entry.js')
-        .pipe(webpack({
-            //watch: true,
-            module: {
-                loaders: [
-                  { test: /\.css$/, loader: 'style!css' },
-                  {
-                      test: /\.jsx?$/,
-                      exclude: /(node_modules|bower_components)/,
-                      loader: 'babel?stage=1&optional=runtime'
-                  }
-        
-                ]
-            },
-            devtool: "eval-source-map",
-            output: {
-                path: __dirname,
-                filename: 'bundle.js'
-            }
-        }))
+    return gulp.src('./Scripts/entry.js')
+        .pipe(gulpWebpack(webpackConfig, webpack))
         .pipe(gulp.dest(paths.lib));
 });
