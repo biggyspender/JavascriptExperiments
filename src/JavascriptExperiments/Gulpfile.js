@@ -1,11 +1,9 @@
 ﻿var gulp = require('gulp');
 var gutil = require("gulp-util");
 var clean = require("gulp-clean");
-var uglify = require("gulp-uglify");
 var webpack = require("webpack");
 var webpackConfig = require("./webpack.config");
 var gulpWebpack = require("gulp-webpack");
-var closure = require('gulp-closure-compiler-service');
 var fs = require("fs");
 
 eval("var project = " + fs.readFileSync("./project.json"));
