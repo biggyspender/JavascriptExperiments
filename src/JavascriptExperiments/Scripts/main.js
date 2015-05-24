@@ -1,7 +1,7 @@
-﻿var promiseLib=require("./Libs/promiseLib");
-var $=require("jquery");
+﻿import * as promiseLib from "./Libs/promiseLib"
+import $ from "jquery"
 
-async function main()
+export async function main()
 {
     await promiseLib.jqDocReady();
     var pre=$("<pre></pre>").appendTo("body");
@@ -13,4 +13,3 @@ async function main()
     }
 }
 
-module.exports = main;

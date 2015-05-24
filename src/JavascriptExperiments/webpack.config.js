@@ -4,12 +4,12 @@ module.exports =
     watch: true,
     plugins: [
         //new webpack.optimize.DedupePlugin(),
-        new webpack.optimize.UglifyJsPlugin({
-            mangle: true,
-            compress: {
-                warnings:false
-            }
-        }),
+        //new webpack.optimize.UglifyJsPlugin({
+        //    mangle: true,
+        //    compress: {
+        //        warnings:false
+        //    }
+        //}),
         //new webpack.optimize.AggressiveMergingPlugin()
     ],
     resolve: {

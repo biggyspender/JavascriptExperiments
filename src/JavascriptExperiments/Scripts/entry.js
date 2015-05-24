@@ -1,2 +1,2 @@
-﻿var main = require("./main");
+﻿import {main} from "./main";
 main();
