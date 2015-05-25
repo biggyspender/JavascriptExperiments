@@ -1,8 +1,20 @@
-﻿import $ from "jquery";
-export var timeout = duration=>new Promise(resolve=>setTimeout(resolve, duration));
-export var jqDocReady = () =>new Promise($.bind($));
-export var jqOne = (jq, events, selector) =>new Promise(resolve=>jq.one(events, selector, resolve));
-export var getJSON = url => new Promise(resolve=>$.getJSON(url, resolve));
-
-
-
+﻿export var timeout = duration=>new Promise(resolve=>setTimeout(resolve, duration));
+export var docReady = ()=>new Promise(resolve=>{
+    if (document.readyState != 'loading'){
+        resolve();
+    } else {
+        document.addEventListener('DOMContentLoaded', resolve);
+    }
+});
+export var listenOnce = function(event){
+    var item=this;
+    return new Promise(resolve=>{
+    
+        var f;
+        f=evt=>{
+            item.removeEventListener(event,f);
+            resolve(evt);
+        };
+        item.addEventListener(event,f);
+    });
+}
